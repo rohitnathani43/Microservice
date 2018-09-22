@@ -1,0 +1,43 @@
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:2.0.4.RELEASE')
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'com.microservice.poc'
+    version = '1.0-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.4.RELEASE'
+
+    // JPA Data
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.0.4.RELEASE'
+
+    // MySQL Connector
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.12'
+
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.6.Final'
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
