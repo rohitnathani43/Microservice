@@ -18,25 +18,27 @@ public class CustomerController {
 
     private static final Logger LOG = LoggerFactory.getLogger(CustomerController.class);
 
+    private static final String CUSTOMERS = "/customers";
+
     @Autowired
     private CustomerRepository customerRepository;
 
     // Get All Customers
-    @GetMapping("/customers")
+    @GetMapping(CUSTOMERS)
     public List<Customer> getAllCustomers() {
         LOG.info("###### Inside getAllCustomers method ######");
         return customerRepository.findAll();
     }
 
     // Create a new Customer
-    @PostMapping("/customers")
+    @PostMapping(CUSTOMERS)
     public Customer createCustomer(@Valid @RequestBody Customer customer) {
         LOG.info("###### Inside POST method ######");
         return customerRepository.save(customer);
     }
 
     // Get a Single Customer by passing the Id
-    @GetMapping("/customers/{id}")
+    @GetMapping(CUSTOMERS + "/{id}")
     public Customer getCustomerById(@PathVariable(value = "id") Long custId) {
         LOG.info("###### Inside getCustomerById method ######");
         return customerRepository.findById(custId)
@@ -44,7 +46,7 @@ public class CustomerController {
     }
 
     // Update a Customer
-    @PutMapping("/customers/{id}")
+    @PutMapping(CUSTOMERS + "/{id}")
     public Customer updateNote(@PathVariable(value = "id") Long custId,
                                @Valid @RequestBody Customer customerDetails) {
         LOG.info("##### Inside UPDATE method #####");
@@ -60,7 +62,7 @@ public class CustomerController {
     }
 
     // Delete a Customer
-    @DeleteMapping("/customers/{id}")
+    @DeleteMapping(CUSTOMERS + "/{id}")
     public ResponseEntity<?> deleteNote(@PathVariable(value = "id") Long custId) {
         LOG.info("##### Inside DELETE method #####");
         Customer customer = customerRepository.findById(custId)
