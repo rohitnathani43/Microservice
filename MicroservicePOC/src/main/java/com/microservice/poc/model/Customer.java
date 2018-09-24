@@ -10,6 +10,11 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * Customer entity mapped to database table.
+ *
+ * @author rohitnathani
+ */
 @Entity
 @Table(name = "customer")
 @EntityListeners(AuditingEntityListener.class)

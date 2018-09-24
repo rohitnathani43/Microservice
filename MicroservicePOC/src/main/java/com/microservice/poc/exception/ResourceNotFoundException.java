@@ -3,6 +3,11 @@ package com.microservice.poc.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+/**
+ * Custom error response class for HTTP Status 404.
+ *
+ * @author rohitnathani
+ */
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class ResourceNotFoundException extends RuntimeException {
     private String resourceName;

@@ -4,6 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+/**
+ * Spring boot main application.
+ *
+ * @author rohitnathani
+ */
 @SpringBootApplication
 @EnableJpaAuditing
 public class MainApp {

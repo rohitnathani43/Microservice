@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * Controller class for mapping HTTP requests.
+ *
+ * @author rohitnathani
+ */
 @RestController
 @RequestMapping("/api")
 public class CustomerController {
