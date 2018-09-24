@@ -13,6 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaAuditing
 public class MainApp {
 
+    // Adding comment
     public static void main(String[] args) {
         SpringApplication.run(MainApp.class, args);
     }
